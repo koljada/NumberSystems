@@ -105,5 +105,14 @@ namespace NumberSystemConverter.Tests
 
             Assert.AreEqual(result, "CMLXIII");
         }
+
+        [TestMethod]
+        public void Number_Equal_3709_Expected_Result_MMMDCCIX_TestMethod()
+        {
+            var converter = new RomanNumeralConverter();
+            var result = converter.ConvertRomanNumeral(3709);
+
+            Assert.AreEqual(result, "MMMDCCIX");
+        }
     }
 }

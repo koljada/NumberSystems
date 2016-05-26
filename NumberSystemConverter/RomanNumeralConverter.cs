@@ -12,25 +12,20 @@ namespace NumberSystemConverter
 
         public string ConvertRomanNumeral(int number)
         {
-            if (number < 1 || number > 3000)
+            if (number < 1 || number >= 4000)
             {
-                throw new IndexOutOfRangeException("The number supplied is out of the expected range (1 - 3000).");
+                throw new IndexOutOfRangeException("The number supplied is out of the expected range (1 - 4000).");
             }
 
             var builder = new StringBuilder();
 
-            //iterate through the list, starting with the highest value
-            foreach (RomanNumeralsType currentPair in Enum.GetValues(typeof(RomanNumeralsType)).Cast<RomanNumeralsType>().Reverse())
+            var romanNumbers = Enum.GetValues(typeof(RomanNumeralsType)).Cast<RomanNumeralsType>().OrderByDescending(x => (int)x);
+            while (number > 0)
             {
-                int current_number = (int)(currentPair);
-
-                while (number >= current_number)
-                {//...number is greater than or equal to the current value so store the roman numeral and decrement it's value 
-                    builder.Append(currentPair.ToString());
-                    number -= current_number;
-                }
+                RomanNumeralsType current = romanNumbers.First(x => (number - (int)x) >= 0);
+                builder.Append(current.ToString());
+                number -= (int)current;
             }
-
             return builder.ToString();
         }
     }

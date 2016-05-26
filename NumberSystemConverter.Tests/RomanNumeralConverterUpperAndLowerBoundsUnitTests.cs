@@ -8,10 +8,10 @@ namespace NumberSystemConverter.Tests
     {
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void Number_Greater_Than_ThreeThousand_Throws_IndexOutOfRangeException_TestMethod()
+        public void Number_Greater_Than_FourThousand_Throws_IndexOutOfRangeException_TestMethod()
         {
             var converter = new RomanNumeralConverter();
-            converter.ConvertRomanNumeral(3001);
+            converter.ConvertRomanNumeral(4000);
         }
 
         [TestMethod]

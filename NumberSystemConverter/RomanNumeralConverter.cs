@@ -1,62 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace NumberSystemConverter
 {
     public class RomanNumeralConverter
     {
-        private readonly List<RomanNumeralPair> _romanNumeralList;
-
         public RomanNumeralConverter()
-        {
-            _romanNumeralList = new List<RomanNumeralPair>()
-            {
-                new RomanNumeralPair()
-                    {
-            //... 1000
-                        NumericValue = Convert.ToInt32(RomanNumeralsType.M),
-                        RomanNumeralRepresentation = RomanNumeralsType.M.ToString()
-                    },
-                new RomanNumeralPair()
-                    {
-            //... 500
-                        NumericValue = Convert.ToInt32(RomanNumeralsType.D),
-                        RomanNumeralRepresentation = RomanNumeralsType.D.ToString()
-                    },
-                new RomanNumeralPair()
-                    {
-            //... 100
-                        NumericValue = Convert.ToInt32(RomanNumeralsType.C),
-                        RomanNumeralRepresentation = RomanNumeralsType.C.ToString()
-                    },
-                new RomanNumeralPair()
-                    {
-            //... 50
-                        NumericValue = Convert.ToInt32(RomanNumeralsType.L),
-                        RomanNumeralRepresentation = RomanNumeralsType.L.ToString()
-                    },
-                new RomanNumeralPair()
-                    {
-            //... 10
-                        NumericValue = Convert.ToInt32(RomanNumeralsType.X),
-                        RomanNumeralRepresentation = RomanNumeralsType.X.ToString()
-                    },
-                new RomanNumeralPair()
-                    {
-            //... 5
-                        NumericValue = Convert.ToInt32(RomanNumeralsType.V),
-                        RomanNumeralRepresentation = RomanNumeralsType.V.ToString()
-                    },
-                new RomanNumeralPair()
-                    {
-            //... 1
-                        NumericValue = Convert.ToInt32(RomanNumeralsType.I),
-                        RomanNumeralRepresentation = RomanNumeralsType.I.ToString()
-                    }
-
-            };
-        }
+        { }
 
         public string ConvertRomanNumeral(int number)
         {
@@ -68,12 +20,14 @@ namespace NumberSystemConverter
             var builder = new StringBuilder();
 
             //iterate through the list, starting with the highest value
-            foreach (var currentPair in _romanNumeralList)
+            foreach (RomanNumeralsType currentPair in Enum.GetValues(typeof(RomanNumeralsType)).Cast<RomanNumeralsType>().Reverse())
             {
-                while (number >= currentPair.NumericValue)
+                int current_number = (int)(currentPair);
+
+                while (number >= current_number)
                 {//...number is greater than or equal to the current value so store the roman numeral and decrement it's value 
-                    builder.Append(currentPair.RomanNumeralRepresentation);
-                    number -= currentPair.NumericValue;
+                    builder.Append(currentPair.ToString());
+                    number -= current_number;
                 }
             }
 

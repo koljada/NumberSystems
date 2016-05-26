@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberSystemConverter", "NumberSystemConverter\NumberSystemConverter.csproj", "{C7B749E5-0F0D-40B9-AAAC-3F3188A75680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberSystemConverter.Tests", "NumberSystemConverter.Tests\NumberSystemConverter.Tests.csproj", "{8974C76F-3A79-4C96-84AE-DA9EDAA25213}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7B749E5-0F0D-40B9-AAAC-3F3188A75680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B749E5-0F0D-40B9-AAAC-3F3188A75680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B749E5-0F0D-40B9-AAAC-3F3188A75680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B749E5-0F0D-40B9-AAAC-3F3188A75680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8974C76F-3A79-4C96-84AE-DA9EDAA25213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8974C76F-3A79-4C96-84AE-DA9EDAA25213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8974C76F-3A79-4C96-84AE-DA9EDAA25213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8974C76F-3A79-4C96-84AE-DA9EDAA25213}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
